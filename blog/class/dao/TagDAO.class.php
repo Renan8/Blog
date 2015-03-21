@@ -1,0 +1,61 @@
+<?php
+/**
+ * Intreface DAO
+ *
+ * @author: http://phpdao.com
+ * @date: 2015-03-20 20:46
+ */
+interface TagDAO{
+
+	/**
+	 * Get Domain object by primry key
+	 *
+	 * @param String $id primary key
+	 * @Return Tag 
+	 */
+	public function load($id);
+
+	/**
+	 * Get all records from table
+	 */
+	public function queryAll();
+	
+	/**
+	 * Get all records from table ordered by field
+	 * @Param $orderColumn column name
+	 */
+	public function queryAllOrderBy($orderColumn);
+	
+	/**
+ 	 * Delete record from table
+ 	 * @param tag primary key
+ 	 */
+	public function delete($id);
+	
+	/**
+ 	 * Insert record to table
+ 	 *
+ 	 * @param Tag tag
+ 	 */
+	public function insert($tag);
+	
+	/**
+ 	 * Update record in table
+ 	 *
+ 	 * @param Tag tag
+ 	 */
+	public function update($tag);	
+
+	/**
+	 * Delete all rows
+	 */
+	public function clean();
+
+	public function queryByNome($value);
+
+
+	public function deleteByNome($value);
+
+
+}
+?>
