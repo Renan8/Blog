@@ -29,9 +29,8 @@ class PostMySqlDAO implements PostDAO{
 		return $this->getList($sqlQuery);
 	}
 	
-	public function queryLimit($Limit){ 
-		// $sql = 'SELECT id, titulo, dat, corpo FROM post LIMIT'.$Limit; não funcionando nesse formato (Verificar)
-		$sql = 'SELECT * FROM post LIMIT 2'; // solução temporaria
+	public function queryLimit($limit, $offset){ 
+		$sql = 'SELECT * FROM post ORDER BY dat DESC LIMIT '.$limit.' OFFSET '.$offset; // ordenando pela última data
 		$sqlQuery = new SqlQuery($sql);
 		return $this->getList($sqlQuery);
 	}

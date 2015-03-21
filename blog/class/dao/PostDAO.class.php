@@ -20,7 +20,7 @@ interface PostDAO{
 	 */
 	public function queryAll();
 	
-	public function queryLimit($Limit);
+	public function queryLimit($limit, $offset);
 	/**
 	 * Get all records from table ordered by field
 	 * @Param $orderColumn column name

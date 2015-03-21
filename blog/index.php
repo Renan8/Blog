@@ -1,12 +1,23 @@
 <?php
 	require('connection.php'); // se estiver adicionado, adiciona de novo
 	include('include_dao.php');
+	$numPost = 2; // numero de posts
+
+	// Paginacao do post
+	if(isset($_GET['p'])){$pag =  $_GET['p'];} 
+    else {$pag = 0;}
+	
+	$ini = $pag * $numPost;	// offset da busca no banco de dados (valor inicial a procurar no select)
+	// monitorando a pagina anterior e proxima
+	$prox = $pag + 1; 
+	$ant = $pag - 1;
+	
 ?>
 
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Renanblog</title>
+		<title>Blog me</title>
 		<link rel="stylesheet" href = "CSS/style.css">
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	</head>
@@ -29,7 +40,7 @@
 				
 					<?php
 						// Pegando 2 posts no banco de dados 
-						$result = DAOFactory::getPostDAO()->queryLimit(1); // Parametro não está sendo utilizado
+						$result = DAOFactory::getPostDAO()->queryLimit($numPost, $ini); 
 						
 						foreach($result as $single){
 							$contentPost = new Post();
@@ -57,8 +68,13 @@
 					
 					<?php
 						}
+						if($ant >= 0){echo "<a href='index.php?p=$ant'>previous</a> ";}
+						// Fazer leitura do número de linhas da tabela pos
+						// Generalizar $prox <= 2 para $prox <= $p_max
+						if($prox <= 2){echo "<a href='index.php?p=$prox'>next</a>";} 
+																		
 					?>
-					
+		            
 					
 				</div>
 				
@@ -87,7 +103,10 @@
 		</div>
 	</body>
 </html>
+
+
 <?php
+	//Tirar isso daqui! (Arrumar uma classe)
 	function limString($string, $value, $clean){
 		if($clean == true){
 			$string = stripp_tags($string);

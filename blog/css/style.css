@@ -59,7 +59,7 @@
 
 #tPost{
 	width: 574px;
-	height: 41px;
+	height: auto;
 	border: 1px solid #000;
 	-webkit-border-top-left-radius: 15px;
 	-webkit-border-top-right-radius: 15px;
