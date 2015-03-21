@@ -29,8 +29,9 @@ class PostMySqlDAO implements PostDAO{
 		return $this->getList($sqlQuery);
 	}
 	
-	public function queryLimit($Limit){
-		$sql = 'SELECT * FROM post LIMIT'.$Limit;
+	public function queryLimit($Limit){ 
+		// $sql = 'SELECT id, titulo, dat, corpo FROM post LIMIT'.$Limit; não funcionando nesse formato (Verificar)
+		$sql = 'SELECT * FROM post LIMIT 2'; // solução temporaria
 		$sqlQuery = new SqlQuery($sql);
 		return $this->getList($sqlQuery);
 	}
@@ -102,7 +103,7 @@ class PostMySqlDAO implements PostDAO{
 		$sqlQuery = new SqlQuery($sql);
 		return $this->executeUpdate($sqlQuery);
 	}
-
+	
 	public function queryByIdUsuario($value){
 		$sql = 'SELECT * FROM post WHERE id_usuario = ?';
 		$sqlQuery = new SqlQuery($sql);
@@ -169,11 +170,9 @@ class PostMySqlDAO implements PostDAO{
 	 */
 	protected function readRow($row){
 		$post = new Post();
-		
-		$post->id = $row['id'];
-		$post->idUsuario = $row['id_usuario'];
+		$post->id=$row['id'];
 		$post->titulo = $row['titulo'];
-		$post->Data = $row['_data'];
+		$post->Data = $row['dat'];
 		$post->corpo = $row['corpo'];
 
 		return $post;

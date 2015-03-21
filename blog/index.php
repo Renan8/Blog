@@ -29,23 +29,28 @@
 				
 					<?php
 						// Pegando 2 posts no banco de dados 
-						$result = DAOFactory::getPostDAO()->queryLimit(2);
+						$result = DAOFactory::getPostDAO()->queryLimit(1); // Parametro não está sendo utilizado
 						
 						foreach($result as $single){
 							$contentPost = new Post();
 							$contentPost = $single;
-							$idPost = $contentPost->id;
-						    $idUsuario = $contentPost->idUsuario;
+							$id = $contentPost->id;
 							$titulo = $contentPost->titulo;
-							$Data = $contentPost->Data;
+							$data = $contentPost->Data;
 							$corpo = $contentPost->corpo;
 					?>
 					
 					<div id="postagem">
-						<div id="tPost"><?php echo $titulo; ?></div>
+						<div id="tPost">
+						<?php 
+							$texto = $titulo."\n Data:".$data;
+							echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
+							
+						?></div>
 						<div id="cPost">
 							<?php echo limString($corpo, 300, false); ?> 
-							<a href = "#">Leia mais</a>
+							<a href = "readPost.php?id=<?php echo $id;?>">Leia mais</a>
+							
 						</div>
 					</div>
 					
@@ -60,20 +65,10 @@
 				<div id="direita">
 				
 					<div id="sideBar">
-						<div id="tSideBar">Categorias</div>
-						<div id="cSideBar">
-							<ul>
-								<li><a href = "#">Todas as postagens</a></li>
-							</ul>
-						</div>
-						
-					</div>
-					
-					<div id="sideBar">
 						<div id="tSideBar">Login</div>
 						<div id="cSideBar">
 							<form method="post" action="logar.php"></form>
-								E_mail:
+								E-mail:
 									<input type = "text" name = "email"><br />
 								Senha:
 									<input type = "text" name = "senha"><br />
