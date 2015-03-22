@@ -6,14 +6,15 @@
     $entrar = $_POST['entrar'];
     $senha = $_POST['senha'];
         if (isset($entrar)) {
-                     
-            $verifica = mysql_query("SELECT * FROM usuario WHERE e_mail = '$email' AND senha = '$senha'") or die("erro ao selecionar");
-                if (mysql_num_rows($verifica)<=0){
-                    echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='login.php';</script>";
-                    die();
-                }else{
-                    setcookie("login",$login);
-                    header("Location:index.php?admin");
-                }
+            $result_email = DAOFactory::getUsuarioDAO()->queryByEMail($email); 
+			$result_senha = DAOFactory::getUsuarioDAO()->queryBySenha($senha);
+			
+            if (count($result_email) == 0 || count($result_senha) == 0){
+                echo"<script language='javascript' type='text/javascript'>alert('Login e/ou senha incorretos');window.location.href='login.php';</script>";
+                die();
+            }else{
+				setcookie("login",$login);
+                header("Location:index.php?admin=");
+            } 
         }
 ?>

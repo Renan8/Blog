@@ -28,7 +28,6 @@
 
 <?php
 	if(@$_GET['go'] == 'postar'){
-	
 		$idUsuario = $_POST['admin'];
 		$titulo = $_POST['titulo'];
 		$corpo = $_POST['conteudo'];

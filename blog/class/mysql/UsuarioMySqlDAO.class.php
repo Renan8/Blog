@@ -57,7 +57,7 @@ class UsuarioMySqlDAO implements UsuarioDAO{
  	 * @param UsuarioMySql usuario
  	 */
 	public function insert($usuario){
-		$sql = 'INSERT INTO usuario (nome, e_mail, foto, _data, senha) VALUES (?, ?, ?, ?, ?)';
+		$sql = 'INSERT INTO usuario (nome, e_mail, foto, dat, senha) VALUES (?, ?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->set($usuario->nome);
@@ -184,7 +184,7 @@ class UsuarioMySqlDAO implements UsuarioDAO{
 		$usuario->nome = $row['nome'];
 		$usuario->eMail = $row['e_mail'];
 		$usuario->foto = $row['foto'];
-		$usuario->Data = $row['_data'];
+		$usuario->Data = $row['dat'];
 		$usuario->senha = $row['senha'];
 
 		return $usuario;
