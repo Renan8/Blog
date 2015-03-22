@@ -106,8 +106,6 @@ class TagMySqlDAO implements TagDAO{
 		return $this->executeUpdate($sqlQuery);
 	}
 
-
-	
 	/**
 	 * Read row
 	 *

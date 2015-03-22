@@ -24,7 +24,7 @@
 			$data = $contentPost->Data;
 			$corpo = $contentPost->corpo;
 			
-			$r = DAOFactory::getUsuarioDAO()->load($idUse);
+			$r = DAOFactory::getUsuarioDAO()->load($idUse); // Retornar o nome do usuario que criou o post
 			$use = new Usuario();
 			$use = $r;
 		
@@ -54,7 +54,7 @@
 						$tag = new Tag();
 						$tag = $single;
 						$nome = $tag->nome;
-						echo $nome." ";
+						echo $nome." | ";
 					}
 				?>
 			</div>

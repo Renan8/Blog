@@ -63,7 +63,7 @@ class PostMySqlDAO implements PostDAO{
  	 * @param PostMySql post
  	 */
 	public function insert($post){
-		$sql = 'INSERT INTO post (id_usuario, titulo, _data, corpo) VALUES (?, ?, ?, ?)';
+		$sql = 'INSERT INTO post (id_usuario, titulo, dat, corpo) VALUES (?, ?, ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setNumber($post->idUsuario);
@@ -82,7 +82,7 @@ class PostMySqlDAO implements PostDAO{
  	 * @param PostMySql post
  	 */
 	public function update($post){
-		$sql = 'UPDATE post SET id_usuario = ?, titulo = ?, _data = ?, corpo = ? WHERE id = ?';
+		$sql = 'UPDATE post SET id_usuario = ?, titulo = ?, dat = ?, corpo = ? WHERE id = ?';
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->setNumber($post->idUsuario);
@@ -118,7 +118,7 @@ class PostMySqlDAO implements PostDAO{
 	}
 
 	public function queryByData($value){
-		$sql = 'SELECT * FROM post WHERE _data = ?';
+		$sql = 'SELECT * FROM post WHERE dat = ?';
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->set($value);
 		return $this->getList($sqlQuery);
@@ -147,7 +147,7 @@ class PostMySqlDAO implements PostDAO{
 	}
 
 	public function deleteByData($value){
-		$sql = 'DELETE FROM post WHERE _data = ?';
+		$sql = 'DELETE FROM post WHERE dat = ?';
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->set($value);
 		return $this->executeUpdate($sqlQuery);

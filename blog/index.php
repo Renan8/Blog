@@ -54,7 +54,7 @@
 					<div id="postagem">
 						<div id="tPost">
 						<?php 
-							$texto = $titulo."\n Data:".$data;
+							$texto = $titulo;
 							echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
 							
 						?></div>
