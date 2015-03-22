@@ -61,7 +61,6 @@ class TagMySqlDAO implements TagDAO{
 		$sqlQuery = new SqlQuery($sql);
 		
 		$sqlQuery->set($tag->nome);
-
 		$id = $this->executeInsert($sqlQuery);	
 		$tag->id = $id;
 		return $id;

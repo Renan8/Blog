@@ -61,10 +61,8 @@ class TemMySqlDAO implements TemDAO{
  	 * @param TemMySql tem
  	 */
 	public function insert($tem){
-		$sql = 'INSERT INTO tem ( id_post, id_tag) VALUES ( ?, ?)';
+		$sql = 'INSERT INTO tem (id_post, id_tag) VALUES ( ?, ?)';
 		$sqlQuery = new SqlQuery($sql);
-		
-
 		
 		$sqlQuery->setNumber($tem->idPost);
 

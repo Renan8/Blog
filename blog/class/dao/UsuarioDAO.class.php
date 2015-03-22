@@ -61,7 +61,6 @@ interface UsuarioDAO{
 
 	public function queryBySenha($value);
 
-
 	public function deleteByNome($value);
 
 	public function deleteByEMail($value);

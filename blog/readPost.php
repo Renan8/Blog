@@ -14,6 +14,7 @@
 	</head>
 	<body>
 		<?php
+			//Recuperar o post completo
 			$result = DAOFactory::getPostDAO()->load($id);
 			
 			$contentPost = new Post();
@@ -24,10 +25,11 @@
 			$data = $contentPost->Data;
 			$corpo = $contentPost->corpo;
 			
-			$r = DAOFactory::getUsuarioDAO()->load($idUse); // Retornar o nome do usuario que criou o post
+			// Recuperar o nome do usuario que criou o post pelo id_usuario
+			$aux = DAOFactory::getUsuarioDAO()->load($idUse); 
 			$use = new Usuario();
-			$use = $r;
-		
+			$use = $aux;
+			
 			$nome = $use->nome;
 			
 		?>		

@@ -33,9 +33,12 @@
 					</div>
 				</div>
 			</div>
-			
+			<?php
+				if(isset($_GET['admin'])){
+					echo "<a href='createPost.php?admin=1'>Criar post</a>";
+				}
+			?>
 			<div id="content">
-			
 				<div id="esquerda">
 				
 					<?php
@@ -77,22 +80,6 @@
 																		
 					?>
 		            
-					
-				</div>
-				
-				<div id="direita">
-				
-					<div id="sideBar">
-						<div id="tSideBar">Login</div>
-						<div id="cSideBar">
-							<form method="post" action="logar.php"></form>
-								E-mail:
-									<input type = "text" name = "email"><br />
-								Senha:
-									<input type = "text" name = "senha"><br />
-									<input type="submit" value="Entrar" />
-						</div>
-					</div>
 					
 				</div>
 				
