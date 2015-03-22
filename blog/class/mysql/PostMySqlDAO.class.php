@@ -170,6 +170,7 @@ class PostMySqlDAO implements PostDAO{
 	protected function readRow($row){
 		$post = new Post();
 		$post->id=$row['id'];
+		$post->idUsuario = $row['id_usuario'];
 		$post->titulo = $row['titulo'];
 		$post->Data = $row['dat'];
 		$post->corpo = $row['corpo'];
