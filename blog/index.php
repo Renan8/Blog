@@ -68,10 +68,12 @@
 					
 					<?php
 						}
+						$result = DAOFactory::getPostDAO()->queryAll(); 
+						$total = count($result); 
 						if($ant >= 0){echo "<a href='index.php?p=$ant'>previous</a> ";}
 						// Fazer leitura do número de linhas da tabela pos
 						// Generalizar $prox <= 2 para $prox <= $p_max
-						if($prox <= 2){echo "<a href='index.php?p=$prox'>next</a>";} 
+						if($prox < ($total/$numPost)){echo "<a href='index.php?p=$prox'>next</a>";} // ($total/numPost) numero de paginacoes maxima
 																		
 					?>
 		            

@@ -23,19 +23,20 @@
 			$data = $contentPost->Data;
 			$corpo = $contentPost->corpo;
 		?>		
-					<div id="postagem">
-						<div id="tPost">
+		<div id="postagem">
+			<div id="tPost">
 						
-						<?php 
-							$texto = $titulo."\n Data:".$data;
-							echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
+				<?php 
+					$texto = $titulo."\n Data:".$data;
+					echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
 							
-						?></div>
+				?>
+			</div>
 						
-						<div id="cPost">
-							<?php echo $corpo ?> 
-						</div>
-					</div>
+			<div id="cPost">
+				<?php echo $corpo ?> 
+			</div>
+		</div>
 
 	</body>
 </html>
