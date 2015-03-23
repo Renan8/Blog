@@ -5,6 +5,8 @@ body{
 	color: #000;
 }
 
+fieldset { border-color:#36648B;  border-style: solid;}
+
 input[type=text]{
 	border-radius:4px;
     -moz-border-radius:4px;
@@ -43,16 +45,26 @@ input[type=submit]{
 		font-size: 70%;
 		font-weight: bold;
 		margin-top: 20px;
+		left: 50%;
 }
 
 a {color: #36648B;}
 
-#box {
-	width: 400px;
-	height: 450px;
+#titulo {
 	position: absolute;
-	left: 35%;
-	bottom: 20%;
+	left: 25%;
+	bottom: 75%;
+	font-size: 300%;
+	color: #FFF;
+	font-weight: bold;
+}
+
+#box {
+	width: 500px;
+	height: 400px;
+	position: absolute;
+	left: 30%;
+	bottom: 7%;
 	background-color: #FFF;
 	
 	-webkit-border-radius: 12px;
@@ -64,20 +76,8 @@ a {color: #36648B;}
 	width: 250px;
 	height: 100px;
 	position: absolute;
-	left: 19%;
-	bottom: 75%;
-}
-
-.cadastrar {
-	font-size: 78%;
-	position: absolute;
-	text-align: center;
-}
-
-.visitante {
-	font-size: 78%;
-	position: absolute;
-	text-align: center;
+	left: 8%;
+	bottom: 60%;
 }
 
 .borda {
