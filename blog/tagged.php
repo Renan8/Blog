@@ -12,8 +12,7 @@
 	$prox = $pag + 1; 
 	$ant = $pag - 1;
 	
-	$use = $_GET['admin'];
-	
+	$idTag = $_GET['id'];
 ?>
 
 <!DOCTYPE html>
@@ -21,6 +20,7 @@
 	<head>
 		<title>Blog me</title>
 		<link rel="stylesheet" href = "CSS/style.css">
+		<script src = "js/goBack.js"></script>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	</head>
 	<body>
@@ -35,25 +35,21 @@
 					</div>
 				</div>
 			</div>
-			<?php
-				if($use != 0){
-					echo "<a href='createPost.php?admin=$use'>Criar post</a>";
-				}
-			?>
+	
 			<div id="content">
 				<div id="esquerda">
 				
 					<?php
 						// Pegando 2 posts no banco de dados 
-						$result = DAOFactory::getPostDAO()->queryLimit($numPost, $ini); 
-						$contentPost = new Post();
+						$post = new Post();
+						$result = DAOFactory::getPostDAO()->queryLimitIdTag($idTag, $numPost, $ini); 
+						
 						foreach($result as $single){
-							
-							$contentPost = $single;
-							$id = $contentPost->id;
-							$titulo = $contentPost->titulo;
-							$data = $contentPost->Data;
-							$corpo = $contentPost->corpo;
+							$post = $single;
+							$id = $post->id;						
+							$titulo = $post->titulo;
+							$data = $post->Data;
+							$corpo = $post->corpo;
 					?>
 					
 					<div id="postagem">
@@ -73,25 +69,18 @@
 					
 					<?php
 						}
-						$result = DAOFactory::getPostDAO()->queryAll(); 
+						$result = DAOFactory::getPostDAO()->queryAllIdTag($idTag); 
 						$total = count($result); 
-						if($ant >= 0){echo "<a href='index.php?admin=$use&p=$ant'>previous</a> ";}
+						if($ant >= 0){echo "<a href='tagged.php?p=$ant&id=$idTag'>previous</a> ";}
 						// Fazer leitura do número de linhas da tabela pos
-						// Generalizar $prox <= 2 para $prox <= $p_max
-						if($prox < ($total/$numPost)){echo "<a href='index.php?admin=$use&p=$prox'>next</a>";} // ($total/numPost) numero de paginacoes maxima
-																		
+						if($prox < ($total/$numPost)){echo "<a href='tagged.php?p=$prox$&id=$idTag'>next</a>";} // ($total/numPost) numero de paginacoes maxima
+																	
 					?>
 		            
 					
 				</div>
-				
 			</div>
-			
-			<div id="rodape">
-				<div id="cRodape"></div>
-			</div>
-			
-		</div>
+			<button onclick="goBack()">Voltar</button>
 	</body>
 </html>
 
@@ -111,5 +100,4 @@
 		return substr($string, 0, $last);
 	}
 ?>
-
 

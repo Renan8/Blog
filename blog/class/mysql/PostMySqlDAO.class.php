@@ -35,6 +35,22 @@ class PostMySqlDAO implements PostDAO{
 		return $this->getList($sqlQuery);
 	}
 	
+	public function queryLimitIdTag($idTag, $limit, $offset){ 
+		$sql = 'SELECT * FROM post INNER JOIN tem ON id = id_post 
+				WHERE id_tag = '.$idTag.' 
+				ORDER BY dat DESC 
+				LIMIT '.$limit.' OFFSET '.$offset; // ordenando pela data mais atual
+		$sqlQuery = new SqlQuery($sql);
+		return $this->getList($sqlQuery);
+	}
+	
+	public function queryAllIdTag($idTag){ 
+		$sql = 'SELECT * FROM post INNER JOIN tem ON id = id_post 
+				WHERE id_tag = '.$idTag; 
+		$sqlQuery = new SqlQuery($sql);
+		return $this->getList($sqlQuery);
+	}
+	
 	/**
 	 * Get all records from table ordered by field
 	 *

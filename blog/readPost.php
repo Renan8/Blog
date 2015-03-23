@@ -10,6 +10,7 @@
 	<head>
 		<title>Renanblog</title>
 		<link rel="stylesheet" href = "CSS/style.css">
+		<script src = "js/goBack.js"></script>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	</head>
 	<body>
@@ -51,17 +52,18 @@
 				Tagged:
 				<?php
 					$result = DAOFactory::getTagDAO()->load($id); // Encontrar todas as tag do post
-					
+					$tag = new Tag();
 					foreach($result as $single){
-						$tag = new Tag();
+						
 						$tag = $single;
 						$nome = $tag->nome;
-						echo $nome." | ";
+						$id = $tag->id;
+						echo "<a href = 'tagged.php?id=$id'>$nome</a> | ";
 					}
 				?>
 			</div>
 			
 		</div>
-
+		 <button onclick="goBack()">Voltar</button>
 	</body>
 </html>

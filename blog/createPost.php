@@ -5,6 +5,7 @@
 	<head>
 		<title>Renanblog</title>
 		<link rel="stylesheet" href = "CSS/style.css">
+		<script src = "js/goBack.js"></script>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	</head>
 	<body>
@@ -20,5 +21,6 @@
 				</fieldset>
 			</form>
 		</div>
+		<button onclick="goBack()">Voltar</button>
 	</body>
 </html>

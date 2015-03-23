@@ -21,7 +21,15 @@ class TemMySqlDAO implements TemDAO{
 
 		return $this->getRow($sqlQuery);
 	}
+	
+	public function getIdPost($idTag){
+		$sql = 'SELECT * FROM tem WHERE id_tag = ? ';
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->setNumber($idTag);
 
+		return $this->getList($sqlQuery);
+	}
+	
 	/**
 	 * Get all records from table
 	 */
