@@ -14,10 +14,17 @@ class TagMySqlDAO implements TagDAO{
 	 * @return TagMySql 
 	 */
 	public function load($id){
-		$sql = 'SELECT * FROM tag INNER JOIN tem ON id = id_tag WHERE id_post = ?'; // Encontrar todas a s tag do post
+		$sql = 'SELECT * FROM tag INNER JOIN tem ON id = id_tag WHERE id_post = ?'; // Encontrar todas as tag do post
 		$sqlQuery = new SqlQuery($sql);
 		$sqlQuery->setNumber($id);
 		return $this->getList($sqlQuery);
+	}
+	
+	public function getIdNome($nome){
+		$sql = 'SELECT * FROM tag WHERE nome = ?';
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->set($nome);
+		return $this->getRow($sqlQuery);
 	}
 
 	/**
@@ -113,7 +120,7 @@ class TagMySqlDAO implements TagDAO{
 	protected function readRow($row){
 		$tag = new Tag();
 		
-		//$tag->id = $row['id'];
+		$tag->id = $row['id'];
 		$tag->nome = $row['nome'];
 
 		return $tag;

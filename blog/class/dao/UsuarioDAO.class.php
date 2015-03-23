@@ -13,7 +13,7 @@ interface UsuarioDAO{
 	 * @param String $id primary key
 	 * @Return Usuario 
 	 */
-	public function load($id);
+	public function getId($id);
 
 	/**
 	 * Get all records from table

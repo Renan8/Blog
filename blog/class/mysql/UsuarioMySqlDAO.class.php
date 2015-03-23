@@ -13,10 +13,18 @@ class UsuarioMySqlDAO implements UsuarioDAO{
 	 * @param String $id primary key
 	 * @return UsuarioMySql 
 	 */
-	public function load($id){
+	 
+	 public function load($id){
 		$sql = 'SELECT * FROM usuario WHERE id = ?';
 		$sqlQuery = new SqlQuery($sql);
-		$sqlQuery->setNumber($id);
+		$sqlQuery->set($id);
+		return $this->getRow($sqlQuery);
+	}
+	 
+	public function getId($email){
+		$sql = 'SELECT * FROM usuario WHERE e_mail = ?';
+		$sqlQuery = new SqlQuery($sql);
+		$sqlQuery->set($email);
 		return $this->getRow($sqlQuery);
 	}
 

@@ -15,7 +15,8 @@
 		$resp = DAOFactory::getUsuarioDAO()->queryByEMail($use->eMail); 
 		if(count($resp) == 0){ 
 			$result = DAOFactory::getUsuarioDAO()->insert($use); 
-			header("Location:index.php?admin=$result->id");  
+			$id = $use->id;
+			header("Location:index.php?admin=$id");  
 		} else {
 			 echo"<script language='javascript' type='text/javascript'>alert('Email existente');window.location.href='cadastro.php';</script>";
 		}

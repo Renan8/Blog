@@ -17,7 +17,7 @@
 			</form>
 		</div>
 		<div id="visitante">
-			<a href="index.php">Entrar como visitante</a>
+			<a href="index.php?admin=0">Entrar como visitante</a>
 		</div>
 	</body>
 </html>

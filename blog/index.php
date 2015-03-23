@@ -12,6 +12,8 @@
 	$prox = $pag + 1; 
 	$ant = $pag - 1;
 	
+	$use = $_GET['admin'];
+	
 ?>
 
 <!DOCTYPE html>
@@ -34,8 +36,8 @@
 				</div>
 			</div>
 			<?php
-				if(isset($_GET['admin'])){
-					echo "<a href='createPost.php?admin=1'>Criar post</a>";
+				if($use != 0){
+					echo "<a href='createPost.php?admin=$use'>Criar post</a>";
 				}
 			?>
 			<div id="content">
@@ -73,10 +75,10 @@
 						}
 						$result = DAOFactory::getPostDAO()->queryAll(); 
 						$total = count($result); 
-						if($ant >= 0){echo "<a href='index.php?p=$ant'>previous</a> ";}
+						if($ant >= 0){echo "<a href='index.php?admin=$use&p=$ant'>previous</a> ";}
 						// Fazer leitura do número de linhas da tabela pos
 						// Generalizar $prox <= 2 para $prox <= $p_max
-						if($prox < ($total/$numPost)){echo "<a href='index.php?p=$prox'>next</a>";} // ($total/numPost) numero de paginacoes maxima
+						if($prox < ($total/$numPost)){echo "<a href='index.php?admin=$use&p=$prox'>next</a>";} // ($total/numPost) numero de paginacoes maxima
 																		
 					?>
 		            
