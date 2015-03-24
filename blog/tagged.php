@@ -1,6 +1,8 @@
 <?php
 	require('connection.php'); // se estiver adicionado, adiciona de novo
 	include('include_dao.php');
+	include('limitar.php');
+	
 	$numPost = 2; // numero de posts
 
 	// Paginacao do post
@@ -68,9 +70,9 @@
 						}
 						$result = DAOFactory::getPostDAO()->queryAllIdTag($idTag); 
 						$total = count($result); 
-						if($ant >= 0){echo "<a href='tagged.php?p=$ant&id=$idTag'>previous</a> ";}
+						if($ant >= 0){echo "<a id = 'ant' href='tagged.php?p=$ant&id=$idTag'>Anterior</a> ";}
 						// Fazer leitura do número de linhas da tabela pos
-						if($prox < ($total/$numPost)){echo "<a href='tagged.php?p=$prox$&id=$idTag'>next</a>";} // ($total/numPost) numero de paginacoes maxima
+						if($prox < ($total/$numPost)){echo "<a id = 'prox' href='tagged.php?p=$prox$&id=$idTag'>Próximo</a>";} // ($total/numPost) numero de paginacoes maxima
 																	
 					?>
 					</footer>
@@ -80,22 +82,3 @@
 			</footer>
 	</body>
 </html>
-
-
-
-<?php
-	//Tirar isso daqui! (Arrumar uma classe)
-	function limString($string, $value, $clean){
-		if($clean == true){
-			$string = stripp_tags($string);
-		} 
-		if(strlen($string) <= $value){
-			return $string;
-		}
-		// Corte do texto no corpo do post
-		$lim_String = substr($string, 0, $value);
-		$last = strrpos($lim_String, ' '); // Procurar o ultimo espaco em branco (evitando cortar palavras ao meio)
-		return substr($string, 0, $last);
-	}
-?>
-

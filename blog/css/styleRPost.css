@@ -18,22 +18,18 @@ section {
 	margin: 10px;
 }
 
-.titulo {
-	font-size: 90px;
-	font-weight: bolder;
-	color:#36648B;
-}
-
 #header{
 	width: 100%;
 	background-color:#BCEE68;
-	height: 217px;
+	height: auto;
 }
 
-#subHeader #left{
-	width: 365px;
-	height: 216px;
-	color: #FFF;
+.titulo {
+	position: relative;
+	left: 35%;
+	font-size: 90px;
+	font-weight: bolder;
+	color:#36648B;
 }
 
 .post{

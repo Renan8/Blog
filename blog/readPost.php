@@ -56,7 +56,10 @@
 				</div>
 						
 				<div id="cPost" class = "post">
-					<?php echo $corpo ?> 
+					<?php
+						$texto = $corpo;
+						echo nl2br($texto); // Reconhecer quebra de linha
+					?> 
 				</div>
 		
 			<div id = "tagged" class = "post">
