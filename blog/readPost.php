@@ -9,11 +9,17 @@
 <html>
 	<head>
 		<title>Renanblog</title>
-		<link rel="stylesheet" href = "CSS/style.css">
+		<link rel="stylesheet" href = "css/styleRPost.css">
 		<script src = "js/goBack.js"></script>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	</head>
 	<body>
+	
+		<div id="header">
+				<header>
+					<span class = "titulo">{myBlog}</span>
+				</header>
+		</div>
 		<?php
 			//Recuperar o post completo
 			$result = DAOFactory::getPostDAO()->load($id);
@@ -34,22 +40,27 @@
 			$nome = $use->nome;
 			
 		?>		
-		<div id="postagem">
-			<div id="tPost">
+			<fieldset>
+				<div id="tPost" class = "post">
+										
+						<?php 					
+							$texto = $titulo."\n";
+							echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
+						?>
 						
-				<?php 
-					$texto = $titulo."\n Por: ".$nome." | ".$data;
-					echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
-							
-				?>
-			</div>
+						<span id = "inf">
+							<?php
+								echo "Por: ".$nome." | ".$data;
+							?>
+						</span>
+				</div>
 						
-			<div id="cPost">
-				<?php echo $corpo ?> 
-			</div>
-			
-			<div id = "tagged">
-				Tagged:
+				<div id="cPost" class = "post">
+					<?php echo $corpo ?> 
+				</div>
+		
+			<div id = "tagged" class = "post">
+				Veja mais sobre:
 				<?php
 					$result = DAOFactory::getTagDAO()->load($id); // Encontrar todas as tag do post
 					$tag = new Tag();
@@ -61,9 +72,9 @@
 						echo "<a href = 'tagged.php?id=$id'>$nome</a> | ";
 					}
 				?>
+			</fieldset>
 			</div>
-			
-		</div>
-		 <button onclick="goBack()">Voltar</button>
+		 <img class = "voltar" src="img/voltar.png" onclick="goBack()" />
+		 
 	</body>
 </html>

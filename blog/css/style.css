@@ -1,119 +1,33 @@
-﻿body {
+﻿body{
+	background-color: #36648B;
 	font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
-	margin: 0 0 0 0;
+	font-size: 100%;
 }
 
-#top{
-	width: 1250px;
-	height: 35px;
-	color: #333;
-	text-align: right;
-	margin: 0 auto;
-}
+a {color: #BCEE68;}
+
+fieldset {border: 4px solid #BCEE68;}
 
 #header{
 	width: 100%;
-	background-color:rgb(255,40,0);
+	background-color:#BCEE68;
 	height: 217px;
-}
-
-#subHeader{
-	width: 960px;
-	height: 217px;
-	background-image: url('');
-	margin: 0 auto;
-}
-
-#subHeader #left{
-	width: 365px;
-	height: 216px;
-	color: #FFF;
 }
 
 .titulo {
-	font-size: 55px;
+	font-size: 90px;
+	font-weight: bolder;
+	color:#36648B;
 }
 
-#postagem{
-	margin-top: 10px;
-}
-
-#content{
-	width: 960px;
-	height: 500px;
-	margin: 0 auto;
-}
-
-#content #esquerda{
-	width: 591px;
-	height: auto;
-	float: left;
-}
-
-#content #direita{
-	width: 324px;
-	height: auto;
-	float: right;
-	margin-top: 10px;
-}
-
-#tPost{
-	width: 574px;
-	height: auto;
-	border: 1px solid #000;
-	-webkit-border-top-left-radius: 15px;
-	-webkit-border-top-right-radius: 15px;
-	-moz-border-radius-topleft: 15px;
-	-moz-border-radius-topright: 15px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	margin-top: 3px;
-	margin-bottom: 2px;
-	padding: 5px;
-}
-
-#cPost{
-	width: 584px;
-	height: auto;
-	border: 1px solid #ECECEC;
-	padding: 5px;
-}
-
-#tSideBar{
-	width: 310px;
-	height: 31px;
-	border: 1px solid #000;
-	-webkit-border-top-left-radius: 15px;
-	-webkit-border-top-right-radius: 15px;
-	-moz-border-radius-topleft: 15px;
-	-moz-border-radius-topright: 15px;
-	border-top-left-radius: 15px;
-	border-top-right-radius: 15px;
-	margin-top: 3px;
-	margin-bottom: 2px;
-	padding: 5px;
-}
-
-#cSideBar{
-	width: 320px;
-	height: auto;
-	border: 1px solid #ECECEC;
-}
-
-#cSideBar a{
-	text-decoration: none;
-	color: #0099CC;
-}
-
-#rodape{
-	width: 100%;
-	height: auto;
-	background-color: rgb(255,40,0);
-	color: #FFF;
-}
-
-#cRodape{
-	width: 960px;
-	margin: 0 auto;
-	text-align: center;
+#newPost {
+	position: relative;
+	left:93%;
+	bottom: -30%;
+	background-color:#36648B;
+	padding: 10px;
+	
+	-webkit-border-radius: 100px;
+	-moz-border-radius: 100px;
+	border-radius: 100px;
 }

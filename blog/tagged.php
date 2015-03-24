@@ -19,25 +19,20 @@
 <html>
 	<head>
 		<title>Blog me</title>
-		<link rel="stylesheet" href = "CSS/style.css">
+		<link rel="stylesheet" href = "css/style.css">
+		<link rel="stylesheet" href = "css/stylePadrao.css">
 		<script src = "js/goBack.js"></script>
 		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
 	</head>
 	<body>
-	
-		<div id="box">
-			<div id="top"></div>
-			
+		
 			<div id="header">
-				<div id="subHeader">
-					<div id="left">
-						<span class="titulo">meBlog</span>
-					</div>
-				</div>
+				<header>
+						<span class = "titulo">{myBlog}</span>
+				</header>
 			</div>
-	
-			<div id="content">
-				<div id="esquerda">
+			
+			<section>
 				
 					<?php
 						// Pegando 2 posts no banco de dados 
@@ -52,22 +47,24 @@
 							$corpo = $post->corpo;
 					?>
 					
-					<div id="postagem">
-						<div id="tPost">
-						<?php 
-							$texto = $titulo;
-							echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
+					<fieldset>
+						<div id="postagem">
+							<div id="tPost" class = "post">
+							<?php 
+								$texto = $titulo;
+								echo nl2br($texto); // nl2br para o navegador reconhecer a quebra de linha
 							
-						?></div>
-						<div id="cPost">
-							<?php echo limString($corpo, 300, false); ?> 
-							<a href = "readPost.php?id=<?php echo $id;?>">Leia mais</a>
+							?></div>
+							<div id="cPost" class = "post">
+								<?php echo limString($corpo, 600, false); ?> ...
+								<a id = "mais" href = "readPost.php?id=<?php echo $id;?>">+</a>
 							
+							</div>
 						</div>
-					</div>
+					</fieldset>
 					
-					
-					<?php
+					<footer>
+						<?php
 						}
 						$result = DAOFactory::getPostDAO()->queryAllIdTag($idTag); 
 						$total = count($result); 
@@ -76,13 +73,14 @@
 						if($prox < ($total/$numPost)){echo "<a href='tagged.php?p=$prox$&id=$idTag'>next</a>";} // ($total/numPost) numero de paginacoes maxima
 																	
 					?>
-		            
-					
-				</div>
-			</div>
-			<button onclick="goBack()">Voltar</button>
+					</footer>
+			</section>	
+			<footer>
+				<img class = "voltar" src = "img/voltar.png" onclick="goBack()" />
+			</footer>
 	</body>
 </html>
+
 
 
 <?php

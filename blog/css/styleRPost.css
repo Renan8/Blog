@@ -1,0 +1,72 @@
+body{
+	background-color: #36648B;
+	font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+	font-size: 120%;
+	color: #000;
+	margin: 20px;
+}
+
+a {color: #778899 ; text-decoration: none;}
+
+fieldset {
+	padding: 20px;
+	margin: 30px;
+	border: 4px solid #BCEE68;
+}
+
+section {
+	margin: 10px;
+}
+
+.titulo {
+	font-size: 90px;
+	font-weight: bolder;
+	color:#36648B;
+}
+
+#header{
+	width: 100%;
+	background-color:#BCEE68;
+	height: 217px;
+}
+
+#subHeader #left{
+	width: 365px;
+	height: 216px;
+	color: #FFF;
+}
+
+.post{
+	width: auto;
+	height: auto;
+	background-color: #FFF;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	margin: 10px 20px 5px 20px;
+	padding: 10px;
+}
+
+#inf {
+	font-size: 70%;
+	color: #778899;
+}
+
+#tagged {
+	font-size: 80%;
+	display: inline-block;
+}
+
+#cPost {font-size: 90%;	}
+
+#tPost {
+	font-weight: bolder;
+	font-size: 120%;
+	display: inline-block;
+}
+
+.voltar {
+	margin: 20px;
+	width: 30px;
+	height: 22px;
+}

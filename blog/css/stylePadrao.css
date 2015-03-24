@@ -1,0 +1,124 @@
+body{
+	background-color: #36648B;
+	font-family: "Trebuchet MS", Verdana, Arial, sans-serif;
+	margin: 20px;
+}
+
+a {text-decoration: none; font-weight: bolder;}
+
+fieldset { 
+	width: auto; 
+	height: auto;
+	padding: 20px;
+	margin: 30px;
+	display: inline-block;
+}
+
+section {margin: 10px;}
+
+input[type=text]{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #cccccc; 
+    border:1px solid #000000;
+    width:290px;
+	height: 30px;
+}
+
+input[type=text]:hover, textarea:hover{background: #ffffff; border:1px solid #990000;}
+
+input[type=password]{
+	border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+    background: #cccccc; 
+    border:1px solid #000000;
+    width:290px;
+	height: 30px;
+}
+
+input[type=password]:hover, textarea:hover{background: #ffffff; border:1px solid #990000;}
+
+textarea{
+    border: 1px solid #000000;
+    background:#cccccc;
+    width:350px;
+    height:200px;
+    border-radius:4px;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    box-shadow: 1px 1px 2px #333333;    
+    -moz-box-shadow: 1px 1px 2px #333333;
+    -webkit-box-shadow: 1px 1px 2px #333333;
+}
+
+input[type=submit]{
+        background:#006699;
+        color:#ffffff;
+		width:206px;
+		height: 30px;
+		font-size: 100%;
+		font-weight: bolder;
+		margin-top: 20px;
+		position: relative;
+		left: 21%;
+}
+
+label {margin-right: 8px;}
+
+
+#box {
+	width: auto;
+	height: auto;
+	background-color: #FFF;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	margin: 10px 20px 5px 20px;
+	padding: 10px;
+	display: inline-block;
+	position: relative;
+	left: 30%;
+}
+
+.post{
+	width: auto;
+	height: auto;
+	background-color: #FFF;
+	-webkit-border-radius: 12px;
+	-moz-border-radius: 12px;
+	border-radius: 12px;
+	margin-top: -50px;
+	padding: 10px;
+}
+
+#cPost {font-size: 90%;}
+
+#tPost {
+	font-weight: bolder;
+	font-size: 120%;
+	display: inline-block;
+	margin-bottom: 30px;
+}
+
+#mais {
+	color: #36648B;
+	font-size: 250%;
+	font-weight: bolder;
+	margin: 5px;
+	position: relative;
+	bottom: -10px;
+}
+
+.voltar {
+	margin: 20px;
+	width: 30px;
+	height: 22px;
+}

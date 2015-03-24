@@ -5,7 +5,9 @@ body{
 	color: #000;
 }
 
-fieldset { border-color:#36648B;  border-style: solid;}
+fieldset { 
+	border: 10px solid #36648B;
+}
 
 input[type=text]{
 	border-radius:4px;
@@ -48,8 +50,6 @@ input[type=submit]{
 		left: 50%;
 }
 
-a {color: #36648B;}
-
 #titulo {
 	position: absolute;
 	left: 25%;
@@ -60,8 +60,8 @@ a {color: #36648B;}
 }
 
 #box {
-	width: 500px;
-	height: 400px;
+	width: auto;
+	height: auto;
 	position: absolute;
 	left: 30%;
 	bottom: 7%;
